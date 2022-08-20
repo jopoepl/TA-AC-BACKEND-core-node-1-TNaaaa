@@ -6,5 +6,5 @@ server.listen(8888, () => {
 
 function handleServer(req, res){
     res.writeHead(202, {"Content-Type": "application/json"})
-    res.end({success: true, message: 'Welcome to Nodejs'});
+    res.end(`{success: true, message: 'Welcome to Nodejs'}`);
 }
