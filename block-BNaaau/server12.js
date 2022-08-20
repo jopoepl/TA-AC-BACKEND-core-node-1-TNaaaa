@@ -7,11 +7,9 @@ server.listen(9999, () => {
 })
 
 function handleServer(req, res){
-    let parsedURL = url.parse(req.url)
+    let parsedURL = url.parse(req.url, true)
     let pathName = parsedURL.pathname
-    let email = parsedURL.query.email
-    console.log(parsedURL, req.url, email)
     console.log(`Parsed URL : ${pathName}, URL : ${req.url}`)
     res.writeHead(202, {"Content-Type": "application/json"})
-    res.end();
+    res.end(JSON.stringify(parsedURL.query));
 }
